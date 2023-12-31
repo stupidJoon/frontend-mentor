@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://results-summary-component.frontend-mentor-2dx.pages.dev
 
 ## My process
 
@@ -42,7 +42,7 @@ Users should be able to:
 
 ### What I learned
 
-* flex 1:1일때 margin, padding 비율 적용 안되면 grid로 바꾸면 잘됨
+* flex로 padding 포함해서 1:1비율 하려면 `box-sizing: border-box`, flex item마다 `flex: 0 0 50%` 설정하기
 * `linear-gradient` 사용법
 * `aspect-ratio` 사용시 width 비율 안맞는 경우 `width: min-content` 설정하기
 * `hsl` 변수 lightness(밝기) 변겅하고 싶을때 `hsl(from var(--variable) h s l / 0.1);`(밝기 0.1로 어둡게 만들기)
