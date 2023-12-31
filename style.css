@@ -1,0 +1,117 @@
+/* CSS Reset */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+input, button, textarea, select { font: inherit; }
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf');
+}
+
+:root {
+  /* Colors */
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+  /* Typography */
+  --fs-base: 1rem;
+  --ff-base: 'Work Sans', sans-serif;
+  --fw-normal: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+}
+
+body {
+  min-height: 100svh;
+  font-family: var(--ff-base);
+  background-color: var(--light-pink);
+  background-image: url('./assets/images/background-pattern-mobile.svg');
+  background-repeat: repeat-x;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 1fr auto 1fr;
+  place-items: center;
+}
+
+.card {
+  grid-row-start: 2;
+  width: min(90%, 600px);
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--white);
+  box-shadow: hsl(292 42% 14% / 20%) 0px 8px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card h1 {
+  font-size: 3rem;
+  font-weight: var(--fw-bold);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  &::before {
+    content: '';
+    background-image: url('./assets/images/icon-star.svg');
+    background-size: 2rem 2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.card details {
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    h2 {
+      font-size: 1rem;
+      font-weight: var(--fw-semi-bold);
+      color: var(--dark-purple);
+      &:hover {
+        cursor: pointer;
+        color: hsl(281, 83%, 54%);
+      }
+    }
+  }
+  summary::after {
+    content: '';
+    background-image: url('./assets/images/icon-plus.svg');
+    background-size: 2rem 2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  &[open] summary::after {
+    background-image: url('./assets/images/icon-minus.svg');
+  }
+  .body {
+    margin-top: 1rem;
+    line-height: 1.5;
+    color: var(--grayish-purple);
+  }
+}
+
+.card > details + details:before {
+  content: '';
+  display: block;
+  position: relative;
+  width: 100%;
+  top: -1rem;
+  border-top: 1px solid var(--light-pink);
+}
+
+.attribution {
+  align-self: end;
+  margin: 1rem;
+}
+
+@media (min-width: 375px) {
+  body {
+    background-image: url('./assets/images/background-pattern-desktop.svg');
+  }
+}
