@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: https://www.frontendmentor.io/solutions/responsive-layout-with-css-grid-LuNlinTd0Q
 - Live Site URL: https://results-summary-component.frontend-mentor-2dx.pages.dev
 
 ## My process
