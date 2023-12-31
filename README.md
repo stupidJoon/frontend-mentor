@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://www.frontendmentor.io/solutions/product-preview-card-component-with-css-grid-m9rKuS7nR1
-- Live Site URL: https://2dd341f5.frontend-mentor-2dx.pages.dev
+- Live Site URL: https://product-preview-card-compone.frontend-mentor-2dx.pages.dev
 
 ## My process
 
