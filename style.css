@@ -89,6 +89,9 @@ body {
   &[open] summary::after {
     background-image: url('./assets/images/icon-minus.svg');
   }
+  summary::-webkit-details-marker {
+    display: none;
+  }
   .body {
     margin-top: 1rem;
     line-height: 1.5;
