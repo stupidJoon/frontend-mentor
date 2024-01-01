@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: https://www.frontendmentor.io/solutions/responsive-css-grid-jUanVP0Ypq
 - Live Site URL: https://social-proof-section.frontend-mentor-2dx.pages.dev
 
 ## My process
