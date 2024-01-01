@@ -17,10 +17,6 @@ p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   --fw-medium: 500;
   --fw-bold: 700;
 
-  /* --bg-image: image-set(
-    url('./images/bg-pattern-top-desktop.svg'), url('./images/bg-pattern-bottom-desktop.svg') 1x,
-    url('./images/bg-pattern-top-mobile.svg'), url('./images/bg-pattern-bottom-mobile.svg') 2x,
-  ); */
   --bg-desktop: url('./images/bg-pattern-top-desktop.svg'), url('./images/bg-pattern-bottom-desktop.svg');
   --bg-mobile: url('./images/bg-pattern-top-mobile.svg'), url('./images/bg-pattern-bottom-mobile.svg');
 }
