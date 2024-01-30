@@ -21,3 +21,13 @@ https://www.frontendmentor.io/profile/stupidJoon
 
 * [product-preview-card-component](https://github.com/stupidJoon/frontend-mentor/tree/product-preview-card-component)
 ![screenshot](../product-preview-card-component/screenshot.png)
+
+## Git add branch
+```bash
+git init
+git remote add origin https://github.com/stupidJoon/frontend-mentor.git
+git switch --orphan branch-name
+git add .
+git commit -m "init"
+git push origin branch-name
+```
