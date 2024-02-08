@@ -1,0 +1,178 @@
+/* CSS Reset */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+input, button, textarea, select { font: inherit; }
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+a { color: inherit; }
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+  /* min-height일시 자녀 height percentage 적용안됨 */
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  color: var(--very-dark-violet);
+}
+
+.cards {
+  flex: 1;
+  position: relative;
+  /* flex min-height problem https://stackoverflow.com/a/63131269 */
+  min-height: 0;
+  flex-basis: 40%;
+  background-image: url('./images/bg-main-mobile.png');
+  background-size: cover;
+}
+
+.card-front {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: end;
+  /* grid 1fr은 flex-grow라서 flex-basis로 줄려면 minmax(0, 1fr) */
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  position: absolute;
+  bottom: -3rem;
+  left: 1rem;
+  aspect-ratio: 447 / 245;
+  width: min(80%, 400px);
+  padding: 1rem;
+  border-radius: .5rem;
+  background-image: url('./images/bg-card-front.png');
+  background-size: cover;
+  color: var(--white);
+}
+.card-front .card-logo {
+  height: 100%;
+}
+.card-front .card-number {
+  grid-column: span 2;
+  grid-row-start: 3;
+  font-size: min(5vw, 25px);
+  letter-spacing: 2px;
+}
+.card-front .card-holder-name {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.card-front .card-exp-date {
+  grid-row-start: 4;
+  justify-self: right;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.card-back {
+  position: absolute;
+  bottom: 3rem;
+  right: 1rem;
+  aspect-ratio: 447 / 245;
+  width: min(80%, 400px);
+  border-radius: .5rem;
+  background-image: url("./images/bg-card-back.png");
+  background-size: cover;
+  color: var(--white);
+}
+.card-back .card-cvc {
+  position: relative;
+  top: 44%;
+  left: 80%;
+  width: min-content;
+  font-size: min(3vw, 16px);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-form {
+  display: grid;
+  /* input element has min-width size="20" default https://stackoverflow.com/a/29990524 */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2fr);
+  grid-auto-rows: min-content;
+  gap: 1rem;
+  margin: 5rem 1rem 1rem 1rem;
+}
+.card-form label {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--very-dark-violet);
+}
+.card-form input {
+  min-width: 0;
+  border: 1px solid var(--light-grayish-violet);
+  border-radius: .5rem;
+  padding: .5rem;
+  &::placeholder {
+    color: var(--light-grayish-violet);
+  }
+}
+.card-form label.card-exp-date {
+  grid-column: span 2;
+  flex-direction: row;
+  flex-wrap: wrap;
+  & span {
+    width: 100%;
+  }
+  & input {
+    width: calc(50% - .25rem);
+  }
+}
+.card-form label.card-cvc {
+  grid-column: span 1;
+}
+.card-form button {
+  grid-column: span 3;
+  padding: .5rem;
+  border-radius: .5rem;
+  background-color: var(--very-dark-violet);
+  color: var(--white);
+}
+
+
+.attribution {
+  margin: 1rem;
+}
+
+@media (min-width: 1024px) {
+  body {
+    flex-direction: row;
+  }
+
+  .cards {
+    background-image: url("./images/bg-main-desktop.png");
+    min-width: 450px;
+  }
+
+  .card-front {
+    top: auto;
+    bottom: calc(50% + .5rem);
+    left: auto;
+    right: -10%;
+  }
+
+  .card-back {
+    top: calc(50% + .5rem);
+    left: auto;
+    right: -20%;
+  }
+
+  .card-form {
+    width: min(60%, 350px);
+    margin: auto;
+  }
+}
