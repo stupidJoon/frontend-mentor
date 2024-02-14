@@ -4,6 +4,9 @@
 https://www.frontendmentor.io/profile/stupidJoon
 
 ## Completed Challenges
+* [interactive-card-details-form](https://github.com/stupidJoon/frontend-mentor/tree/interactive-card-details-form)
+![screenshot](../interactive-card-details-form/screenshot.png)
+
 * [news-homepage-main](https://github.com/stupidJoon/frontend-mentor/tree/news-homepage-main)
 ![screenshot](../news-homepage-main/screenshot.png)
 
