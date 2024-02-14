@@ -7,6 +7,8 @@ p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 a { color: inherit; }
 
 :root {
+  --active-input-border-gradient: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  --red: hsl(0, 100%, 66%);
   --white: hsl(0, 0%, 100%);
   --light-grayish-violet: hsl(270, 3%, 87%);
   --dark-grayish-violet: hsl(279, 6%, 55%);
@@ -120,6 +122,14 @@ main {
   &::placeholder {
     color: var(--light-grayish-violet);
   }
+  &:focus {
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: .5rem;
+    background-image: linear-gradient(#fff, #fff), var(--active-input-border-gradient);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
 }
 .card-form label.card-exp-date {
   grid-column: span 2;
@@ -143,9 +153,40 @@ main {
   color: var(--white);
 }
 
+.input-error {
+  font-size: .7rem;
+  text-transform: none;
+  color: var(--red);
+}
+
+.completed {
+  margin: 5rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.completed img {
+  width: 5rem;
+}
+.completed p {
+  color: var(--dark-grayish-violet);
+}
+.completed button {
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: .5rem;
+  border: none;
+  background-color: var(--very-dark-violet);
+  color: var(--white);
+}
 
 .attribution {
   margin: 1rem;
+}
+
+.display-none {
+  display: none;
 }
 
 @media (min-width: 1024px) {
@@ -156,6 +197,7 @@ main {
   .cards {
     background-image: url("./images/bg-main-desktop.png");
     min-width: 450px;
+    flex: none;
   }
 
   .card-front {
@@ -169,6 +211,15 @@ main {
     top: calc(50% + .5rem);
     left: auto;
     right: -20%;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  .completed {
+    width: min(60%, 350px);
+    margin: auto;
   }
 
   .card-form {
