@@ -4,6 +4,9 @@
 https://www.frontendmentor.io/profile/stupidJoon
 
 ## Completed Challenges
+* [bento-grid](https://github.com/stupidJoon/frontend-mentor/tree/bento-grid)
+![image](https://github.com/user-attachments/assets/04d58610-a677-4c3b-93c3-1a8e5bf75d73)
+
 * [interactive-card-details-form](https://github.com/stupidJoon/frontend-mentor/tree/interactive-card-details-form)
 ![screenshot](../interactive-card-details-form/screenshot.png)
 
